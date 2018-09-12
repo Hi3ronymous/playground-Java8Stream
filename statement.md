@@ -14,6 +14,8 @@ Example:
 
 ```java runnable
 // { autofold
+import java.util.Arrays;
+import java.util.List;
 public class Main {
 
 public static void main(String[] args) {
@@ -42,6 +44,8 @@ This doesn't have terminal operation so no output will be displayed.
 That is because intermediate operations will only be executed when a terminal operation is present.
 ```java runnable
 // { autofold
+import java.util.Arrays;
+import java.util.List;
 public class Main {
 
 public static void main(String[] args) {
@@ -60,6 +64,8 @@ Stream.of("d2", "a2", "b1", "b3", "c")
 The above example have teminal operation
 ```java runnable
 // { autofold
+import java.util.Arrays;
+import java.util.List;
 public class Main {
 
 public static void main(String[] args) {
@@ -81,6 +87,8 @@ To avoid uncessary calls, instead of executing the operations horizontally we ca
 
 ```java runnable
 // { autofold
+import java.util.Arrays;
+import java.util.List;
 public class Main {
 
 public static void main(String[] args) {
