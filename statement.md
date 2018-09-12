@@ -17,6 +17,7 @@ Example:
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+import java.util.function.Supplier;
 public class Main {public static void main(String[] args) {
 // }
 
@@ -45,6 +46,7 @@ That is because intermediate operations will only be executed when a terminal op
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+import java.util.function.Supplier;
 public class Main {public static void main(String[] args) {
 // }
 
@@ -66,6 +68,7 @@ The above example have teminal operation
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+import java.util.function.Supplier;
 public class Main {public static void main(String[] args) {
 // }
 
@@ -88,6 +91,7 @@ To avoid uncessary calls, instead of executing the operations horizontally we ca
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+import java.util.function.Supplier;
 public class Main {public static void main(String[] args) {
 // }
 
@@ -119,6 +123,7 @@ Calling noneMatch after anyMatch on the same stream results in Exeption.
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+import java.util.function.Supplier;
 public class Main {public static void main(String[] args) {
 // }
 
@@ -141,6 +146,7 @@ To overcome this limitation we have to to create a new stream chain for every te
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
+import java.util.function.Supplier;
 public class Main {public static void main(String[] args) {
 // }
 
