@@ -16,6 +16,7 @@ Example:
 // { autofold
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 public class Main {public static void main(String[] args) {
 // }
 
@@ -43,6 +44,7 @@ That is because intermediate operations will only be executed when a terminal op
 // { autofold
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 public class Main {public static void main(String[] args) {
 // }
 
@@ -63,6 +65,7 @@ The above example have teminal operation
 // { autofold
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 public class Main {public static void main(String[] args) {
 // }
 
@@ -83,6 +86,7 @@ To avoid uncessary calls, instead of executing the operations horizontally we ca
 // { autofold
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 public class Main {public static void main(String[] args) {
 // }
 
