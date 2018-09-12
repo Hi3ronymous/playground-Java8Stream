@@ -110,3 +110,55 @@ The operation `anyMatch` returns `true` as soon as the predicate applies to the 
 This is true for the second element passed "A2". 
 Due to the vertical execution of the stream chain, `map` has only to be executed twice in this case. 
 So instead of mapping all elements of the stream, `map` will be called as few as possible.
+
+### Reusing Streams
+Java 8 streams cannot be reused. As soon as you call any terminal operation the stream is closed:
+Calling noneMatch after anyMatch on the same stream results in Exeption.
+```java runnable
+// { autofold
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+public class Main {public static void main(String[] args) {
+// }
+
+Stream<String> stream =
+    Stream.of("d2", "a2", "b1", "b3", "c")
+        .filter(s -> s.startsWith("a"));
+
+stream.anyMatch(s -> true);    // ok
+stream.noneMatch(s -> true);   // exception
+
+//{ autofold
+}}
+//}
+```
+
+To overcome this limitation we have to to create a new stream chain for every terminal operation we want to execute, e.g. we could create a stream supplier to construct a new stream with all intermediate operations already set up:
+
+```java runnable
+// { autofold
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+public class Main {public static void main(String[] args) {
+// }
+
+Supplier<Stream<String>> streamSupplier =
+    () -> Stream.of("d2", "a2", "b1", "b3", "c")
+            .filter(s -> s.startsWith("a"));
+
+streamSupplier.get().anyMatch(s -> true);   // ok
+streamSupplier.get().noneMatch(s -> true);  // ok
+
+//{ autofold
+}}
+//}
+```
+Each call to `get()` constructs a new stream on which we are save to call the desired terminal operation.
+
+### Collect
+### FlatMap
+### Reduce
+
+## Parallel Streams
