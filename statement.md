@@ -82,6 +82,7 @@ Stream.of("d2", "a2", "b1", "b3", "c")
 ```
 
 To avoid uncessary calls, instead of executing the operations horizontally we can do it vertically:
+
 ```java runnable
 // { autofold
 import java.util.Arrays;
@@ -105,4 +106,7 @@ Stream.of("d2", "a2", "b1", "b3", "c")
 //}
 ```
 
-The operation anyMatch returns true as soon as the predicate applies to the given input element. This is true for the second element passed "A2". Due to the vertical execution of the stream chain, map has only to be executed twice in this case. So instead of mapping all elements of the stream, map will be called as few as possible.
+The operation `anyMatch` returns `true` as soon as the predicate applies to the given input element. 
+This is true for the second element passed "A2". 
+Due to the vertical execution of the stream chain, `map` has only to be executed twice in this case. 
+So instead of mapping all elements of the stream, `map` will be called as few as possible.
