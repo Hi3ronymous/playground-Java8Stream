@@ -16,9 +16,7 @@ Example:
 // { autofold
 import java.util.Arrays;
 import java.util.List;
-public class Main {
-
-public static void main(String[] args) {
+public class Main {public static void main(String[] args) {
 // }
 
 List<String> myList =
@@ -32,9 +30,7 @@ myList
     .forEach(System.out::println);
 
 //{ autofold
-}
-
-}
+}}
 //}
 ```
 
@@ -42,14 +38,14 @@ myList
 
 This doesn't have terminal operation so no output will be displayed.
 That is because intermediate operations will only be executed when a terminal operation is present.
+
 ```java runnable
 // { autofold
 import java.util.Arrays;
 import java.util.List;
-public class Main {
-
-public static void main(String[] args) {
+public class Main {public static void main(String[] args) {
 // }
+
 Stream.of("d2", "a2", "b1", "b3", "c")
     .filter(s -> {
         System.out.println("filter: " + s);
@@ -57,21 +53,19 @@ Stream.of("d2", "a2", "b1", "b3", "c")
     });
 
 //{ autofold
-}
-
-}
+}}
 //}
 ```
 
 The above example have teminal operation
+
 ```java runnable
 // { autofold
 import java.util.Arrays;
 import java.util.List;
-public class Main {
-
-public static void main(String[] args) {
+public class Main {public static void main(String[] args) {
 // }
+
 Stream.of("d2", "a2", "b1", "b3", "c")
     .filter(s -> {
         System.out.println("filter: " + s);
@@ -80,22 +74,18 @@ Stream.of("d2", "a2", "b1", "b3", "c")
     .forEach(s -> System.out.println("forEach: " + s));
 
 //{ autofold
-}
-
-}
+}}
 //}
 ```
 
 To avoid uncessary calls, instead of executing the operations horizontally we can do it vertically:
-
 ```java runnable
 // { autofold
 import java.util.Arrays;
 import java.util.List;
-public class Main {
-
-public static void main(String[] args) {
+public class Main {public static void main(String[] args) {
 // }
+
 Stream.of("d2", "a2", "b1", "b3", "c")
     .map(s -> {
         System.out.println("map: " + s);
@@ -107,9 +97,7 @@ Stream.of("d2", "a2", "b1", "b3", "c")
     });
 
 //{ autofold
-}
-
-}
+}}
 //}
 ```
 
